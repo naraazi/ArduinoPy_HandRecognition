@@ -1,0 +1,9 @@
+To PyFirmata code works, you need to install the Firmata library on Arduino.
+Then, go to Examples -> Firmata -> StandardFirmata and compile to the Arduino board.
+
+When you run 'main.py' for the first time, you WILL get this error:
+    len_args = len(inspect.getargspec(func)[0])
+It is because the 'pyfirmata' is too old and use 3.7 ~ 3.10 python.
+To make this work, just change the line above to this:
+    len_args = len(inspect.getfullargspec(func)[0])
+You are ready to go!

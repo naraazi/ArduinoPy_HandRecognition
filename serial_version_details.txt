@@ -1,0 +1,1 @@
+To serial version works, you need to compile the 'receiverRecognition.ino' to the Arduino board via IDE.
