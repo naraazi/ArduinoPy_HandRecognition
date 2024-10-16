@@ -3,7 +3,7 @@ from cvzone.HandTrackingModule import HandDetector
 import serial
 from time import sleep
 
-ser = serial.Serial("COM7", 9600)  # -- modify the serial port here
+ser = serial.Serial("/dev/ttyACM0", 9600)  # -- modify the serial port here
 sleep(2)
 
 detector = HandDetector(detectionCon=0.8, maxHands=1)
@@ -86,8 +86,8 @@ while True:
         previous_fingerUp = None  # -- reset previous gesture when no hands are detected
 
     cv2.imshow("Retorno", frame)
-    k = cv2.waitKey(1)
-    if k == ord("k"):
+    q = cv2.waitKey(1)
+    if q == ord("q"):
         break
 
 video.release()
